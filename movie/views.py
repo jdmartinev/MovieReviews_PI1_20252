@@ -23,6 +23,7 @@ def home(request):
         # lista únicamente la(s) película(s) cuyo título contiene el nombre buscado
         movies = Movie.objects.filter(title__icontains=searchTerm)
     else: 
+        # FR10 Display movies
         # lista todas las películas de la base de datos
         movies = Movie.objects.all()
     return render(request, 'home.html', {'searchTerm':searchTerm, 'movies': movies})
