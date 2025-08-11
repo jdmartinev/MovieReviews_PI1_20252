@@ -20,6 +20,7 @@ def home(request):
 
     # si se está buscando una película
     if searchTerm:
+        # FR17 Search movie by name
         # lista únicamente la(s) película(s) cuyo título contiene el nombre buscado
         movies = Movie.objects.filter(title__icontains=searchTerm)
     else: 
