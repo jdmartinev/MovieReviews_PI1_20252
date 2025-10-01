@@ -115,3 +115,7 @@ def statistics_view(request):
         'genre_graphic': genre_graphic
     })
 
+#FR-11 Display a basic signup page
+def signup(request):
+    email = request.GET.get('email') 
+    return render(request, 'signup.html', {'email':email})
